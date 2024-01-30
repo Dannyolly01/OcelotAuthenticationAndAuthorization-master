@@ -1,0 +1,22 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  authenticationwebapi:
+    build:
+      context: "/Users/vastcom/Projects/microservice/OcelotAuthenticationAndAuthorization-master"
+      dockerfile: "AuthenticationWebApi/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net6.0/AuthenticationWebApi.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "authenticationwebapi:dev"
+    ports: []
+    volumes:
+    - "/Users/vastcom/.nuget/packages:/root/.nuget/packages"
+    - "/Users/vastcom/Projects/microservice/OcelotAuthenticationAndAuthorization-master/AuthenticationWebApi:/app:rw"
+    - "/Users/vastcom/Projects/microservice/OcelotAuthenticationAndAuthorization-master:/src:rw"
+    working_dir: "/app"

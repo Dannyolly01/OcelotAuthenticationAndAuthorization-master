@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+//option csharp_namespace = "CustomerService";
+
+//package CustomerService;
+// The customer service definition.
+service CustomerRpc{
+  // Gets all customers
+  rpc GetCustomers (GetCustomersRequest) returns (GetCustomersResponse);
+}
+
+// The request message containing the parameters for the GetCustomers method.
+message GetCustomersRequest {
+}
+
+// The response message containing the customers.
+message GetCustomersResponse {
+  //repeated CustomerRes customers = 1;
+  string  customerName  = 1;
+}
+
+// The customer message type.
+message CustomerRes {
+  //int32 customerId = 1;
+  string customerName = 1;
+  // Add other fields as needed...
+}
